@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proffy | Sua plataforma de estudos online</title>
         
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/styles/partials/header.css">
-    <link rel="stylesheet" href="/styles/partials/forms.css">
-    <link rel="stylesheet" href="/styles/partials/page-study.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/partials/header.css">
+    <link rel="stylesheet" href="styles/partials/forms.css">
+    <link rel="stylesheet" href="styles/partials/page-study.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
 
@@ -30,16 +30,29 @@
                         <label for="subject">Matéria</label>
                         <select name="subject" id="subject">
                             <option value="" disabled="" hidden="">Selecione uma opção</option>
-                            <option value="aaaaaaaaaaa">aaaaaaaaaaaa</option>
-                            <option value="aaaaaaaaaaa">bbbbbbbbbbbb</option>
+                            <option value="Artes">Artes</option>
+                            <option value="Biologia">Biologia</option>
+                            <option value="Ciências">Ciências</option>
+                            <option value="Educação">Educação</option>
+                            <option value="Física">Física</option>
+                            <option value="Geografia">Geografia</option>
+                            <option value="História">História</option>
+                            <option value="Matemática">Matemática</option>
+                            <option value="Português">Português</option>
+                            <option value="Química">Química</option>
                         </select>
                     </div>
                     <div class="select-block">
                         <label for="weekday">Dia da semana</label>
                         <select name="weekday" id="weekday">
                             <option value="" disabled="" hidden="">Selecione uma opção</option>
-                            <option value="aaaaaaaaaaa">aaaaaaaaaaaa</option>
-                            <option value="aaaaaaaaaaa">bbbbbbbbbbbb</option>                                      
+                            <option value="Domingo">Domingo</option>
+                            <option value="Segunda-Feira">Segunda-Feira</option>                                      
+                            <option value="Terça-Feira">Terça-Feira</option>
+                            <option value="Quarta-Feira">Quarta-Feira</option>
+                            <option value="Quinta-Feira">Quinta-Feira</option>
+                            <option value="Sexta-Feira">Sexta-Feira</option>
+                            <option value="Sábado">Sábado</option>
                         </select>
                     </div>
                     <div class="input-block">
@@ -52,34 +65,28 @@
         </header>
 
         <main>
+            <article class="teacher-item">
+                <header>
+                    <img src="https://avatars0.githubusercontent.com/u/23216770?s=400&u=8cacb19204a872f2eb6dab524444700a33fc48d1&v=4" alt="Gustavo Neres">
+                    <div>
+                        <strong>Gustavo Neres</strong>
+                        <span>Geografia</span>
+                    </div>
+                </header>
 
-            {% if proffys == "" %}
-                <p class="no-results">Nenhum professor encontrado com a sua pesquisa.</p>
+                <p>As vezes não sei nem onde eu tô, mas consigo me localizar facilmente em qualquer lugar. Tenho memória fotográfica 
+                    e nunca fico perdido.<br><br>Eu ensino a galera como não se perder na vida, com lições geográficas simples para você 
+                    nunca mais precisar de mapa na sua bela vida.</p>
 
-            {% else %}
-                {% for proffy in proffys %}
-                    <article class="teacher-item">
-                        <header>
-                            <img src="{{ proffy.avatar }}" alt="{{ proffy.name }}">
-                            <div>
-                                <strong>{{ proffy.name }}</strong>
-                                <span>{{ proffy.subject }}</span>
-                            </div>
-                        </header>
+                <footer>
+                    <p>Preço/hora<strong>R$ 360,00</strong></p>
+                    <a href="https://api.whatsapp.com/send?1=pt_BR&phone=5519992923648&text=Tenho interesse na sua aula de Geografia Gustavo Neres (Alguem acessou o github pages)"
+                    class="button" target="_blank">
+                        <img src="images/icons/whatsapp.svg" alt="Whatsapp">Entrar em contato
+                    </a>
+                </footer>
 
-                        <p>{{ proffy.bio }}</p>
-
-                        <footer>
-                            <p>Preço/hora<strong>R$ {{ proffy.cost }}</strong></p>
-                            <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55{{ proffy.whatsapp }}&text=Tenho interesse na sua aula de {{ proffy.subject }} {{ proffy.name }}"
-                            class="button" target="_blank">
-                                <img src="/images/icons/whatsapp.svg" alt="Whatsapp">Entrar em contato
-                            </a>
-                        </footer>
-
-                    </article>
-                {% endfor %}
-            {% endif %}
+            </article>            
         </main>
     </div>
 
