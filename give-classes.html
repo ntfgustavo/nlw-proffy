@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proffy | Sua plataforma de estudos online</title>
         
-    <link rel="stylesheet" href="/styles/main.css">
-    <link rel="stylesheet" href="/Styles/partials/header.css">
-    <link rel="stylesheet" href="/Styles/partials/forms.css">
-    <link rel="stylesheet" href="/styles/partials/page-give-classes.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/partials/header.css">
+    <link rel="stylesheet" href="styles/partials/forms.css">
+    <link rel="stylesheet" href="styles/partials/page-give-classes.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
 
-    <script src="/scripts/addField.js" defer></script>
+    <!--<script src="/scripts/addField.js" defer></script>-->
 
 </head>
 <body id="page-give-classes">
@@ -20,10 +20,10 @@
     <div id="container">
         <header class="page-header">
             <div class="top-bar-container">
-                <a href="/">
-                    <img src="/images/icons/back.svg" alt="Voltar">
+                <a href="/nlw-proffy">
+                    <img src="images/icons/back.svg" alt="Voltar">
                 </a>
-                <img src="/images/logo.svg" alt="Proffy">
+                <img src="images/logo.svg" alt="Proffy">
             </div>
             <div class="header-content">
                 <strong>Que incrível que você quer dar aulas</strong>
@@ -33,7 +33,7 @@
         </header>
 
         <main>
-            <form action="/save-classes" id="create-class" method="POST">
+            <form action="" id="create-class" method="POST">
                 <fieldset>
                     <legend>Seus dados</legend>
 
@@ -64,13 +64,18 @@
                         <label for="subject">Matéria</label>
                         <select name="subject" id="subject">
                             <option value="">Selecione uma opção</option>
-                            {%for subject in subjects %}
-                                <option value="{{ loop.index }}">
-                                    {{ subject }}
-                                </option>    
-                            {%endfor%} 
+                            <option value="Artes">Artes</option>
+                            <option value="Biologia">Biologia</option>
+                            <option value="Ciências">Ciências</option>
+                            <option value="Educação">Educação</option>
+                            <option value="Física">Física</option>
+                            <option value="Geografia">Geografia</option>
+                            <option value="História">História</option>
+                            <option value="Matemática">Matemática</option>
+                            <option value="Português">Português</option>
+                            <option value="Química">Química</option>
                         </select>
-                    </div>
+                    </div>                    
 
                     <div class="input-block">
                         <label for="cost">Custo da sua hora/aula <small>(R$)</small></label>
@@ -85,16 +90,17 @@
                     </legend>
 
                     <div class="schedule-item">
-
                         <div class="select-block">
                             <label for="weekday">Dia da semana</label>
                             <select name="weekday[]" required>
                                 <option value="">Selecione uma opção</option>
-                                {%for weekday in weekdays %}
-                                <option value="{{ loop.index0 }}">
-                                    {{ weekday }}
-                                </option>    
-                            {%endfor%} 
+                                <option value="Domingo">Domingo</option>
+                                <option value="Segunda-Feira">Segunda-Feira</option>                                      
+                                <option value="Terça-Feira">Terça-Feira</option>
+                                <option value="Quarta-Feira">Quarta-Feira</option>
+                                <option value="Quinta-Feira">Quinta-Feira</option>
+                                <option value="Sexta-Feira">Sexta-Feira</option>
+                                <option value="Sábado">Sábado</option> 
                             </select>
                         </div>
 
@@ -106,17 +112,39 @@
                         <div class="input-block">
                             <label for="time_to">Até</label>
                             <input name="time_to[]" type="time" required>
-                        </div>
-                        
+                        </div>                        
                     </div>
+                    <div class="schedule-item">
+                        <div class="select-block">
+                            <label for="weekday">Dia da semana</label>
+                            <select name="weekday[]" required>
+                                <option value="">Selecione uma opção</option>
+                                <option value="Domingo">Domingo</option>
+                                <option value="Segunda-Feira">Segunda-Feira</option>                                      
+                                <option value="Terça-Feira">Terça-Feira</option>
+                                <option value="Quarta-Feira">Quarta-Feira</option>
+                                <option value="Quinta-Feira">Quinta-Feira</option>
+                                <option value="Sexta-Feira">Sexta-Feira</option>
+                                <option value="Sábado">Sábado</option> 
+                            </select>
+                        </div>
 
+                        <div class="input-block">
+                            <label for="time_from">Das</label>
+                            <input name="time_from[]" type="time" required>
+                        </div>
+    
+                        <div class="input-block">
+                            <label for="time_to">Até</label>
+                            <input name="time_to[]" type="time" required>
+                        </div>                        
+                    </div>
                 </fieldset>
-
             </form>
 
             <footer>
                 <p>
-                    <img src="/images/icons/warning.svg" alt="Aviso importantes">
+                    <img src="images/icons/warning.svg" alt="Aviso importantes">
                     Importante! <br> Preencha todos os dados
                 </p>
                 <button type="submit" form="create-class">Salvar cadastro</button>
